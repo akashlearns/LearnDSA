@@ -1,5 +1,5 @@
 package January;
-//takeen help because of using the backtracking 
+//taken help because of using the backtracking 
 public class p26jan2opti {
     public static void main(String[] args) {
         String str = "Akash";
