@@ -57,6 +57,29 @@ public class p31marLinkedListImplementations {
                 temp = temp.next;
             }
         }
+        void deleteAt(int idx){
+            if (idx < 0 || idx >= size) {
+                System.out.println("Invalid index");
+                return;
+            }
+        
+            if (idx == 0) { // Special case: Deleting head node
+                head = head.next;
+                size--;
+                return;
+            }
+        
+            Node temp = head;
+            for (int i = 0; i < idx - 1; i++) {  // Corrected loop range
+                temp = temp.next;
+            }
+        
+            if (temp.next != null) {
+                temp.next = temp.next.next;  // Bypass the node to delete
+            }
+        
+            size--;
+        }
         int getAt( int idx){
             Node temp = head;
             for (int i = 1; i <=idx; i++) {
@@ -81,8 +104,10 @@ public class p31marLinkedListImplementations {
         ll.insertAtEnd(6);
         ll.inserAt(1 ,96);
         ll.display();
+        ll.deleteAt(1);
+        ll.display();
         System.out.println("Size is:"+ll.size());
-        System.out.println(ll.getAt(3));
+        System.out.println(ll.getAt(1));
         //System.out.println(ll.size); we can do this also.
 
     }
